@@ -35,6 +35,7 @@ class GameObject:
 
 
 player = GameObject(WHITE, 10, 10)
+not_player = GameObject((0,0,0), 10, 10)
 
 # #Main Game Loop
 while True:
@@ -63,6 +64,8 @@ while True:
 
     player.move()
     DISPLAYSURF.fill(NAVY)
+
+    DISPLAYSURF.blit(not_player.image, not_player.pos)
     DISPLAYSURF.blit(player.image, player.pos)
     pygame.display.update()
     pygame.time.delay(50)
