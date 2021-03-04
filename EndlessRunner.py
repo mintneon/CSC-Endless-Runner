@@ -23,7 +23,10 @@ class GameObject:
         self.ay = 0
 
     def move(self):
+        # #shift position by (ax,ay)
         self.pos = self.pos.move(self.ax, self.ay)
+
+        # #loop the character if it falls off the edge of screen
         if self.pos.right > 400:
             self.pos.left = 0
         if self.pos.left < 0:
@@ -43,6 +46,7 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
+        # #set player acceleration when key is pressed
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 player.ax = -10
@@ -52,6 +56,7 @@ while True:
                 player.ay = -10
             if event.key == pygame.K_DOWN:
                 player.ay = 10
+        # #reset player acceleration when key is released
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT:
                 player.ax = 0
