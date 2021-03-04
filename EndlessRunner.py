@@ -49,13 +49,18 @@ while True:
                 player.ax = 10
             if event.key == pygame.K_UP:
                 player.ay = -10
-            if event.key == pygame.KDOWN:
+            if event.key == pygame.K_DOWN:
                 player.ay = 10
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT:
                 player.ax = 0
             if event.key == pygame.K_RIGHT:
                 player.ax = 0
+            if event.key == pygame.K_UP:
+                player.ay = 0
+            if event.key == pygame.K_DOWN:
+                player.ay = 0
+
     player.move()
     DISPLAYSURF.fill(NAVY)
     DISPLAYSURF.blit(player.image, player.pos)
